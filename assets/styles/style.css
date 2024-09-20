@@ -1,0 +1,620 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #c4ace0; /* Light Purple Background */
+    margin: 0;
+    padding: 0;
+    color: #333;
+    box-sizing: border-box; /* Include padding in all elements */
+}
+
+
+
+/* Header Styling */
+.header-container {
+    display: flex;
+    justify-content: space-between;    
+    align-items: center; /* Align items vertically */
+    padding: 10px 5%;
+    width: 100%;
+    box-sizing: border-box; /* Include padding in the width */
+    background-color: #f7f7f7; /* Dark Purple Header */
+}
+
+/* Style for the logo */
+.logo {
+    max-width: 150px;
+    height: auto;
+   
+}
+
+
+#image-slider h2{
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #F7F7F7; /* Orange color for the heading */  
+   font-family: 'Dancing Script', cursive;
+  font-size: 32px; /* Example size */
+}
+/* Style the navigation links */
+nav {
+    display: flex;
+    gap: 30px;
+    margin: 0; /* Remove extra margin */
+   
+   
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #f7f7f7;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: #c4ace0;
+    border-radius: 30px;
+    background-color: #c4ace0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: #9fdbdb;
+    color: #f7f7f7;
+}
+
+
+/* Style the SWIPER-CONTAINER */
+/* Main Content */
+main {
+    padding: 20px 10%;
+    text-align: center;
+}
+
+/* Style for images inside Swiper slides */
+.swiper-slide img {
+    max-width: 100%;  /* Ensure image doesn't overflow horizontally */ 
+    padding: 20px;  
+}
+
+
+/* Style for Swiper slides */
+.swiper-slide {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+     padding: 10px;
+}
+
+
+/* Session List Styling */
+#sessions ul {
+    list-style-type: none;
+    padding: 0px;
+}
+
+#sessions ul li {
+    background-color: #f7f7f7;
+    color = #f7f7f7;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#sessions h2 {
+    color: #9b59b6;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+}
+
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;    
+    width: 100%;
+}
+
+/* Button Styles */
+button {
+    background-color: #9b59b6;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #8e44ad;
+}
+
+/* BUBLE*/
+
+.soapBubble{
+position:relative;
+z-index: 1;
+width: 5vmin;
+height: 5vmin;
+outline: 0 solid rgba(0,0,0,.7) ;
+transition:1s;
+}
+
+.soapBubble div{
+position:absolute;
+height: 100%;
+width: 100%;
+}
+.bubbleImg{
+    border-radius: 50%;
+    border:3px solid rgba(255,255,255,.5);
+    transition: 1s;
+    background-image:
+        url("data:image/svg+xml;utf8, <svg width='100' height='100' xmlns='http://www.w3.org/2000/svg'><circle cx='50' cy='50' r='50' fill='none'/><circle cx='24' cy='24' r='7.5' fill='white' /><path d='M78 58.4999C69.5 72.4999 56 78.4999 53.5 80.9999C51 83.4999 50 89.9999 59.5 87.4999C69 84.9999 82.5 76.4999 86.5 67.4999C90.5 58.5 86.5 44.5 78 58.4999Z' fill='rgba(255,255,255,.9)' style='filter:blur(0px)'/></svg>"),
+        radial-gradient(circle at 70% 96%,white .5%, rgba(255,255,200,.4) 2%, transparent 9%) ,
+        radial-gradient( at 30% 20%,white 1%, rgba(255,255,200,1) 2%, transparent 20%,transparent 50%, rgba(0,200,200,.3) 73%,rgba(0,80,80,.3) 84% ),     
+        radial-gradient(circle at 0% 0%,rgba(255,0,255,.7) 2%,transparent 80%);
+    background-size: cover;
+}
+.moveX{
+animation-name: moveX;
+animation-duration: 10s;
+animation-timing-function: ease-in-out;
+animation-direction: alternate;
+animation-iteration-count: infinite;
+}
+@keyframes moveX{ 
+from{transform: translateX(-5vw);}
+to{transform: translateX(5vw);}
+}
+/* Move vertically adapting to screen size */
+.moveY {
+    animation-name: moveY;
+    animation-duration: 1.4s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes moveY {
+    from { transform: translateY(-3vh); }  /* Move slightly up */
+    to { transform: translateY(3vh); }     /* Move slightly down */
+}
+.deformX{
+animation-name: deformX;
+animation-duration: 4s;
+animation-timing-function: ease-in-out;
+animation-direction: alternate;
+animation-iteration-count: infinite;
+}
+@keyframes deformX { 
+0%{transform: none;}
+25%{transform:scaleX(1.05) skewX(2deg)}
+50%{transform:none}
+75%{transform:scaleX(1.05)  skewX(-2deg)}
+100%{transform: none;}
+}
+.deformY{
+animation-name: deformY;
+animation-duration: 5s;
+animation-timing-function: ease-in-out;
+animation-direction: alternate;
+animation-iteration-count: infinite;
+}
+@keyframes deformY { 
+0%{transform: none;}
+25%{transform:scaleY(1.05) skewY(2deg)}
+50%{transform:none}
+75%{transform:scaleY(1.05)  skewY(-2deg)}
+100%{transform: none;}
+}  
+
+
+/* Specific Styles for Different Bubbles */
+.bubble1 {
+    top: 20%;
+    left: 10%;
+    width: 4vmin;
+    height: 4vmin;
+    animation: move1 12s infinite;
+}
+
+.bubble2 {
+    top: 10%;
+    left: 5%;
+     width: 6vmin;
+    height: 6vmin;
+    animation: move2 20s infinite;
+}
+
+
+.bubble3 {
+    top: 10%;
+    left: 7%;
+     width: 2vmin;
+    height: 2vmin;
+    animation: move3 8s infinite;
+}
+
+/* Additional bubble animations */
+@keyframes move1 {
+    from { transform: translateY(-10vh); }
+    to { transform: translateY(10vh); }
+}
+
+@keyframes move2 {
+    from { transform: translateY(-15vh); }
+    to { transform: translateY(15vh); }
+}
+
+
+@keyframes move3 {
+    from { transform: translateY(-10vh); }
+    to { transform: translateY(10vh); }
+}
+/* Testimonials Section */
+.testimonials {
+  background: #f9f9f9;
+  padding: 50px 0;
+}
+
+.testimonials .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.testimonials h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.testimonial-carousel {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+}
+
+.testimonial {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 0 10px;
+  flex: 0 0 auto;
+  width: 300px;
+  text-align: center;
+}
+
+.testimonial p {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.testimonial cite {
+  display: block;
+  font-style: normal;
+  color: #777;
+}
+
+html {
+      scroll-behavior: smooth;
+    }
+
+/* Responsive Design */
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .logo {
+        padding: 0;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+        margin: 10px 0;
+    }
+
+    nav a {
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+
+    .swiper-slide img {
+        max-width: 80%;  /* Ensure better scaling on small devices */
+    }
+
+    .testimonial-carousel {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonial {
+        width: 90%;
+        margin: 10px 0;
+    }
+}
+
+/* Mission Section */
+.mission {
+  background-color: #e0f7fa; /* Light blue background */
+  padding: 50px 50px;
+  text-align: center;
+ margin-bottom: 50px; /* Adds space below the mission section */
+}
+
+.mission .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.mission h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #00796b; /* Darker teal color */
+}
+
+.mission p {
+  font-size: 1.2em;
+  color: #333;
+  line-height: 1.6;
+  font-style: italic; /* Cursive font */
+}
+
+
+/* Booking Section */
+#booking {
+  background-color: #fff3e0; /* Light orange background */
+  padding: 50px 0;
+  text-align: center;
+  margin-top: 50px; /* Adds space below the mission section */
+}
+
+#booking .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+#booking h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #ff7043; /* Orange color for the heading */
+}
+
+#booking p {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.booking-btn {
+  background-color: #ff7043; /* Orange background for the button */
+  color: white;
+  font-size: 1.2em;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.booking-btn:hover {
+  background-color: #e64a19; /* Darker orange on hover */
+}
+
+.booking-btn:active {
+  background-color: #d84315; /* Even darker orange when clicked */
+}
+
+/* Apply these styles only on screens smaller than 600px */
+@media only screen and (max-width: 600px) {
+    .testimonial-section {
+        max-height: 400px;  /* Set a fixed height (adjust as needed) */
+        overflow-y: scroll; /* Enable vertical scrolling */
+        padding-right: 10px; /* Optional: add space for scrollbar */
+    }
+
+    /* Optional: Customize scrollbar appearance */
+    .testimonial-section::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .testimonial-section::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.3);  /* Scrollbar color */
+        border-radius: 5px;                    /* Rounded corners */
+    }
+
+    .testimonial-section::-webkit-scrollbar-track {
+        background-color: transparent;         /* Track color */
+    }
+}
+
+
+/* General Styles */
+.contact-title {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.contact-info {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.contact-info p {
+  margin: 10px 0;
+  font-size: 1.1em;
+}
+
+.contact-info a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+
+/* Importing a modern font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+#hidroestimulacion {
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+h2 {
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.service {
+    margin-bottom: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service h3 {
+    font-size: 1.8em;
+    color: #C4ACE0;
+    padding: 15px;
+    background-color: #e2e2e2;
+    margin: 0;
+}
+
+.service-content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.service .text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.service .text p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+.service .image {
+    flex: 1;
+    max-width: 400px;
+}
+
+.service .image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#employee-login {
+    padding: 20px;
+    background-color: #f5f5f5;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#employee-login h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#login-form {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+#login-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+#login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#login-form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1em;
+}
+
+
+h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #F7F7F7;
+    font-family: Arial, sans-serif;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icon i {
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+.social-icon span {
+    font-size: 16px;
+}
+
+.social-icon:hover {
+    color: #9BDDDB; /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.social-icon i.fab {
+    font-size: 28px;
+}
